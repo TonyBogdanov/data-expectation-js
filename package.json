@@ -1,0 +1,31 @@
+{
+  "name": "data-expectation",
+  "version": "1.0.2",
+  "description": "ECMAScript implementation of TonyBogdanov/data-expectation",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha --require @babel/register 'tests/**/*.es6'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TonyBogdanov/data-expectation-js.git"
+  },
+  "author": "Tony Bogdanov <support@tonybogdanov.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TonyBogdanov/data-expectation-js/issues"
+  },
+  "homepage": "https://github.com/TonyBogdanov/data-expectation-js#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/node": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/register": "^7.7.7",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2"
+  }
+}
