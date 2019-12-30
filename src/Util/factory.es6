@@ -16,6 +16,11 @@ import AndExpectation from '../Expectation/AndExpectation';
 import ArrayDiffExpectation from '../Expectation/ArrayDiffExpectation';
 import ArrayExpectation from '../Expectation/ArrayExpectation';
 import ArrayIntersectExpectation from '../Expectation/ArrayIntersectExpectation';
+import ListExpectation from '../Expectation/ListExpectation';
+import ArrayKeysExpectation from '../Expectation/ArrayKeysExpectation';
+import EnumExpectation from '../Expectation/EnumExpectation';
+import BooleanExpectation from '../Expectation/BooleanExpectation';
+import OrExpectation from '../Expectation/OrExpectation';
 
 export default name => {
 
@@ -32,6 +37,11 @@ export default name => {
         ScalarExpectation: ScalarExpectation,
         StringLengthExpectation: StringLengthExpectation,
         ArrayExpectation: ArrayExpectation,
+        ListExpectation: ListExpectation,
+        ArrayKeysExpectation: ArrayKeysExpectation,
+        EnumExpectation: EnumExpectation,
+        BooleanExpectation: BooleanExpectation,
+        OrExpectation: OrExpectation,
 
     };
 
