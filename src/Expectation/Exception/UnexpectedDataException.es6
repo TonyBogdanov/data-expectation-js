@@ -13,7 +13,7 @@ export default class UnexpectedDataException {
 
         if ( isObject( data ) ) {
 
-            return data.name;
+            return data.name ? data.name : 'object';
 
         }
 

@@ -5,4 +5,4 @@
  * file that was distributed with this source code.
  */
 
-export default value => value === Object( value );
+export default value => value === Object( value ) && ! Array.isArray( value );

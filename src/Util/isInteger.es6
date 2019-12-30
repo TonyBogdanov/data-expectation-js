@@ -5,4 +5,4 @@
  * file that was distributed with this source code.
  */
 
-export default value => ( /boolean|number|string/ ).test( typeof value );
+export default value => value === +value && isFinite( value ) && ! ( value % 1 );

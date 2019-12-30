@@ -5,56 +5,22 @@
  * file that was distributed with this source code.
  */
 
-import isObject from './isObject';
+import filterDefinition from './filterDefinition';
 
-import ScalarExpectation from '../Expectation/ScalarExpectation';
-import StringExpectation from '../Expectation/StringExpectation';
-import StringLengthExpectation from '../Expectation/StringLengthExpectation';
-import ValueExpectation from '../Expectation/ValueExpectation';
+import InvalidExpectationDefinitionException from '../Expectation/Exception/InvalidExpectationDefinitionException';
+import AbstractExpectation from '../Expectation/AbstractExpectation';
 
-const map = [
+function fromDefinition( definition ) {
 
-    ScalarExpectation,
-    StringExpectation,
-    StringLengthExpectation,
-    ValueExpectation,
+    let expectation = filterDefinition( definition );
+    if ( ! ( expectation instanceof AbstractExpectation ) ) {
 
-];
-
-function transform( data ) {
-
-    if (
-
-        ! isObject( data ) ||
-        'string' !== typeof data._expectation ||
-        'object' !== typeof data.args ||
-        ! Array.isArray( data.args )
-
-    ) {
-
-        return data;
+        throw new InvalidExpectationDefinitionException( definition );
 
     }
 
-    const matched = map.filter( expectation => expectation.name === data._expectation );
-    if ( 1 !== matched.length ) {
-
-        throw new Error( `Invalid or unsupported expectation name: ${ data._expectation }.` );
-
-    }
-
-    return new matched[0]( ...data.args.map( transform ) );
+    return expectation;
 
 }
 
-export default definition => {
-
-    if ( 'string' !== typeof definition._expectation ) {
-
-        throw new Error( `Invalid expectation definition: ${ JSON.stringify( definition ) }.` );
-
-    }
-
-    return transform( definition );
-
-};
+export default filterDefinition;

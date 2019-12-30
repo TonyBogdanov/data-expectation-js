@@ -5,4 +5,4 @@
  * file that was distributed with this source code.
  */
 
-export default value => ( /boolean|number|string/ ).test( typeof value );
+export default ( left, right ) => left.filter( value => -1 !== right.indexOf( value ) );

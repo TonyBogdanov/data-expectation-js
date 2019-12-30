@@ -7,9 +7,10 @@
 
 import { expect } from "chai";
 
-import ValueExpectation from '../../src/Expectation/ValueExpectation';
+import fromDefinition from '../src/Util/fromDefinition';
+import ValueExpectation from '../src/Expectation/ValueExpectation';
 
-describe( 'ValueExpectation::expect()', () => {
+describe( 'ValueExpectation.expect()', () => {
 
     function invalidProvider() {
 
@@ -88,6 +89,18 @@ describe( 'ValueExpectation::expect()', () => {
 
         let expectation = new ValueExpectation( Infinity );
         expect( () => expectation.expect( 123 ) ).to.throw();
+
+    } );
+
+    it( 'testFromDefinition', () => {
+
+        let expectation = new ValueExpectation( 'hello' );
+        expect( JSON.stringify( fromDefinition( {
+
+            expectationName: ValueExpectation.name,
+            expectationArguments: [ 'hello' ],
+
+        } ) ) ).to.equal( JSON.stringify( expectation ) );
 
     } );
 

@@ -5,6 +5,12 @@
  * file that was distributed with this source code.
  */
 
-import fromDefinition from './fromDefinition';
+export default class InvalidExpectationNameException {
 
-export default json => fromDefinition( JSON.parse( json ) );
+    constructor( name ) {
+
+        this.message = `Invalid or unsupported expectation name: ${ name }.`;
+
+    }
+
+}
