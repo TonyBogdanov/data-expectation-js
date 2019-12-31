@@ -23,4 +23,4 @@ function fromDefinition( definition ) {
 
 }
 
-export default filterDefinition;
+export default fromDefinition;
