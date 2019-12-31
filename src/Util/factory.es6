@@ -21,6 +21,10 @@ import ArrayKeysExpectation from '../Expectation/ArrayKeysExpectation';
 import EnumExpectation from '../Expectation/EnumExpectation';
 import BooleanExpectation from '../Expectation/BooleanExpectation';
 import OrExpectation from '../Expectation/OrExpectation';
+import GreaterThanExpectation from '../Expectation/GreaterThanExpectation';
+import GreaterThanOrEqualExpectation from '../Expectation/GreaterThanOrEqualExpectation';
+import LowerThanExpectation from '../Expectation/LowerThanExpectation';
+import LowerThanOrEqualExpectation from '../Expectation/LowerThanOrEqualExpectation';
 
 export default name => {
 
@@ -42,6 +46,10 @@ export default name => {
         EnumExpectation: EnumExpectation,
         BooleanExpectation: BooleanExpectation,
         OrExpectation: OrExpectation,
+        GreaterThanExpectation: GreaterThanExpectation,
+        GreaterThanOrEqualExpectation: GreaterThanOrEqualExpectation,
+        LowerThanExpectation: LowerThanExpectation,
+        LowerThanOrEqualExpectation: LowerThanOrEqualExpectation,
 
     };
 

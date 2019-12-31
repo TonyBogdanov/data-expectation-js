@@ -20,7 +20,8 @@ export default class OrExpectation extends AbstractExpectation {
 
     getType() {
 
-        return `or (\n${ this.expectations.map( expectation => this.indent( `${ expectation.getType() };\n` ) ) })`;
+        return `or (\n${ this.expectations.map( expectation =>
+            this.indent( `${ expectation.getType() };\n` ) ).join( '' ) })`;
 
     }
 

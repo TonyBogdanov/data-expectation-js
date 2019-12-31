@@ -9,8 +9,15 @@ import isObject from './isObject';
 import factory from './factory';
 
 import InvalidExpectationNameException from '../Expectation/Exception/InvalidExpectationNameException';
+import AbstractExpectation from '../Expectation/AbstractExpectation';
 
 function filterDefinition( data ) {
+
+    if ( data instanceof AbstractExpectation ) {
+
+        return data;
+
+    }
 
     if (
 
