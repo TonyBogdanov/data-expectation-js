@@ -98,7 +98,7 @@ class Factory {
 
     static fromDefinition( data ) {
 
-        let expectation = Factory.filterDefinition( data );
+        let expectation = Factory.filterDefinition( 'string' === typeof data ? JSON.parse( data ) : data );
         if ( ! ( expectation instanceof AbstractExpectation ) ) {
 
             throw new InvalidExpectationDefinitionException( data );
