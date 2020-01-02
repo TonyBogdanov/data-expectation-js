@@ -1,6 +1,6 @@
 {
   "name": "data-expectation",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "ECMAScript implementation of TonyBogdanov/data-expectation",
   "main": "index.js",
   "directories": {
