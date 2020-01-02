@@ -10,25 +10,21 @@ import regexFromString from '../Util/regexFromString';
 import AbstractExpectation from './AbstractExpectation';
 import UnexpectedDataException from './Exception/UnexpectedDataException';
 
-export default class RegexMatchExpectation extends AbstractExpectation {
-
-    constructor( pattern ) {
-
-        super();
-
-        this.pattern = 'string' === typeof pattern ? regexFromString( pattern ) : pattern;
-
-    }
+export default class RegexPatternExpectation extends AbstractExpectation {
 
     getType() {
 
-        return `regexMatch = ${ this.pattern }`;
+        return 'regexPattern';
 
     }
 
     expect( data, path = null ) {
 
-        if ( ! data.match( this.pattern ) ) {
+        try {
+
+            regexFromString( data );
+
+        } catch ( e ) {
 
             throw new UnexpectedDataException( data, this, path );
 
