@@ -7,7 +7,7 @@
 
 import { expect } from 'chai';
 
-import fromDefinition from '../src/Util/fromDefinition';
+import Factory from '../src/Factory';
 import GreaterThanExpectation from '../src/Expectation/GreaterThanExpectation';
 
 describe( 'GreaterThanExpectation.expect()', () => {
@@ -56,7 +56,7 @@ describe( 'GreaterThanExpectation.expect()', () => {
 
         let expectation = new GreaterThanExpectation( 123 );
 
-        expect( JSON.stringify( fromDefinition( {
+        expect( JSON.stringify( Factory.fromDefinition( {
 
             expectationName: GreaterThanExpectation.name,
             expectationArguments: [ 123 ],

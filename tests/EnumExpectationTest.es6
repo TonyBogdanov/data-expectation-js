@@ -7,7 +7,7 @@
 
 import { expect } from 'chai';
 
-import fromDefinition from '../src/Util/fromDefinition';
+import Factory from '../src/Factory';
 import EnumExpectation from '../src/Expectation/EnumExpectation';
 
 describe( 'EnumExpectation.expect()', () => {
@@ -50,7 +50,7 @@ describe( 'EnumExpectation.expect()', () => {
     it( 'testFromDefinition', () => {
 
         let expectation = new EnumExpectation( [ true, 123, null, 'hello' ] );
-        expect( JSON.stringify( fromDefinition( {
+        expect( JSON.stringify( Factory.fromDefinition( {
 
             expectationName: EnumExpectation.name,
             expectationArguments: [ [ true, 123, null, 'hello' ] ],

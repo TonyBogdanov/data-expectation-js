@@ -7,7 +7,7 @@
 
 import { expect } from 'chai';
 
-import fromDefinition from '../src/Util/fromDefinition';
+import Factory from '../src/Factory';
 import ArrayDiffExpectation from '../src/Expectation/ArrayDiffExpectation';
 import ValueExpectation from '../src/Expectation/ValueExpectation';
 
@@ -46,7 +46,7 @@ describe( 'ArrayDiffExpectation.expect()', () => {
 
         let expectation = new ArrayDiffExpectation( [ 'a', 'b' ], new ValueExpectation( [ 'c' ] ) );
 
-        expect( JSON.stringify( fromDefinition( {
+        expect( JSON.stringify( Factory.fromDefinition( {
 
             expectationName: ArrayDiffExpectation.name,
             expectationArguments: [ [

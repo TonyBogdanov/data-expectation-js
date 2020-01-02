@@ -7,7 +7,7 @@
 
 import { expect } from 'chai';
 
-import fromDefinition from '../src/Util/fromDefinition';
+import Factory from '../src/Factory';
 import AndExpectation from '../src/Expectation/AndExpectation';
 import NotExpectation from '../src/Expectation/NotExpectation';
 import EmptyExpectation from '../src/Expectation/EmptyExpectation';
@@ -74,7 +74,7 @@ describe( 'AndExpectation.expect()', () => {
 
         );
 
-        expect( JSON.stringify( fromDefinition( {
+        expect( JSON.stringify( Factory.fromDefinition( {
 
             expectationName: AndExpectation.name,
             expectationArguments: [ {

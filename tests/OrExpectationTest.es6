@@ -7,7 +7,7 @@
 
 import { expect } from 'chai';
 
-import fromDefinition from '../src/Util/fromDefinition';
+import Factory from '../src/Factory';
 import StringExpectation from '../src/Expectation/StringExpectation';
 import OrExpectation from '../src/Expectation/OrExpectation';
 import BooleanExpectation from '../src/Expectation/BooleanExpectation';
@@ -72,7 +72,7 @@ describe( 'OrExpectation.expect()', () => {
 
         );
 
-        expect( JSON.stringify( fromDefinition( {
+        expect( JSON.stringify( Factory.fromDefinition( {
 
             expectationName: OrExpectation.name,
             expectationArguments: [ {

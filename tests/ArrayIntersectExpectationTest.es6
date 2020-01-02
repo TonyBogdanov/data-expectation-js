@@ -7,7 +7,7 @@
 
 import { expect } from 'chai';
 
-import fromDefinition from '../src/Util/fromDefinition';
+import Factory from '../src/Factory';
 import ValueExpectation from '../src/Expectation/ValueExpectation';
 import ArrayIntersectExpectation from '../src/Expectation/ArrayIntersectExpectation';
 
@@ -49,7 +49,7 @@ describe( 'ArrayIntersectExpectation.expect()', () => {
 
         let expectation = new ArrayIntersectExpectation( [ 'a', 'b' ], new ValueExpectation( [ 'a', 'b' ] ) );
 
-        expect( JSON.stringify( fromDefinition( {
+        expect( JSON.stringify( Factory.fromDefinition( {
 
             expectationName: ArrayIntersectExpectation.name,
             expectationArguments: [ [

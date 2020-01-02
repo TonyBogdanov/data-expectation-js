@@ -7,7 +7,7 @@
 
 import { expect } from "chai";
 
-import fromDefinition from '../src/Util/fromDefinition';
+import Factory from '../src/Factory';
 import StringLengthExpectation from '../src/Expectation/StringLengthExpectation';
 import ValueExpectation from '../src/Expectation/ValueExpectation';
 
@@ -48,7 +48,7 @@ describe( 'StringLengthExpectation.expect()', () => {
     it( 'testFromDefinition', () => {
 
         let expectation = new StringLengthExpectation( new ValueExpectation( 0 ) );
-        expect( JSON.stringify( fromDefinition( {
+        expect( JSON.stringify( Factory.fromDefinition( {
 
             expectationName: StringLengthExpectation.name,
             expectationArguments: [ {

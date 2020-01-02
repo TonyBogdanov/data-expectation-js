@@ -7,7 +7,7 @@
 
 import { expect } from "chai";
 
-import fromDefinition from '../src/Util/fromDefinition';
+import Factory from '../src/Factory';
 import IntegerExpectation from '../src/Expectation/IntegerExpectation';
 import NotExpectation from '../src/Expectation/NotExpectation';
 
@@ -36,7 +36,7 @@ describe( 'NotExpectation.expect()', () => {
     it( 'testFromDefinition', () => {
 
         let expectation = new NotExpectation( new IntegerExpectation() );
-        expect( JSON.stringify( fromDefinition( {
+        expect( JSON.stringify( Factory.fromDefinition( {
 
             expectationName: NotExpectation.name,
             expectationArguments: [ {

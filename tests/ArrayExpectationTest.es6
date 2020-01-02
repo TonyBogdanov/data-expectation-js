@@ -7,7 +7,7 @@
 
 import { expect } from 'chai';
 
-import fromDefinition from '../src/Util/fromDefinition';
+import Factory from '../src/Factory';
 import ArrayExpectation from '../src/Expectation/ArrayExpectation';
 
 describe( 'ArrayExpectation.expect()', () => {
@@ -29,7 +29,7 @@ describe( 'ArrayExpectation.expect()', () => {
     it( 'testFromDefinition', () => {
 
         let expectation = new ArrayExpectation();
-        expect( JSON.stringify( fromDefinition( {
+        expect( JSON.stringify( Factory.fromDefinition( {
 
             expectationName: ArrayExpectation.name,
             expectationArguments: [],

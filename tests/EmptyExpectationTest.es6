@@ -7,7 +7,7 @@
 
 import { expect } from "chai";
 
-import fromDefinition from '../src/Util/fromDefinition';
+import Factory from '../src/Factory';
 import EmptyExpectation from '../src/Expectation/EmptyExpectation';
 
 describe( 'EmptyExpectation.expect()', () => {
@@ -36,7 +36,7 @@ describe( 'EmptyExpectation.expect()', () => {
     it( 'testFromDefinition', () => {
 
         let expectation = new EmptyExpectation();
-        expect( JSON.stringify( fromDefinition( {
+        expect( JSON.stringify( Factory.fromDefinition( {
 
             expectationName: EmptyExpectation.name,
             expectationArguments: [],
