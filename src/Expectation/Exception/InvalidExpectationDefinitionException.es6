@@ -11,8 +11,17 @@ export default class InvalidExpectationDefinitionException {
 
     constructor( definition ) {
 
-        this.message = `Invalid expectation definition: ${ isObject( definition ) && definition.name ?
-            definition.name : typeof definition }.`;
+        if ( isObject( definition ) && definition.name ) {
+
+            definition = definition.name;
+
+        } else {
+
+            definition = `(${ typeof definition }) ${ JSON.stringify( definition ) }`;
+
+        }
+
+        this.message = `Invalid expectation definition: ${ definition }.`;
 
     }
 
