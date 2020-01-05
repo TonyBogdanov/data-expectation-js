@@ -98,12 +98,6 @@ class Factory {
 
     static fromDefinition( data ) {
 
-        if ( 'string' === typeof data ) {
-
-            data = JSON.parse( data );
-
-        }
-
         let expectation = Factory.filterDefinition( data );
         if ( ! ( expectation instanceof AbstractExpectation ) ) {
 
