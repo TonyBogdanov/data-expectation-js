@@ -15,14 +15,33 @@ describe( 'ArrayExpectation.expect()', () => {
     it( 'testValid', () => {
 
         let expectation = new ArrayExpectation();
+
         expect( expectation.expect( [] ) ).to.equal( expectation );
+        expect( expectation.expect( [ 'a' ] ) ).to.equal( expectation );
+        expect( expectation.expect( { 'a': 'a' } ) ).to.equal( expectation );
 
     } );
 
-    it( 'testInvalid', () => {
+    it( 'testInvalidType', () => {
 
         let expectation = new ArrayExpectation();
-        expect( () => expectation.expect( {} ) ).to.throw();
+        expect( () => expectation.expect( 123 ) ).to.throw();
+
+    } );
+
+    it( 'testInvalidObject', () => {
+
+        class TestClass {}
+
+        let expectation = new ArrayExpectation();
+        expect( () => expectation.expect( new TestClass() ) ).to.throw();
+
+    } );
+
+    it( 'testInvalidNull', () => {
+
+        let expectation = new ArrayExpectation();
+        expect( () => expectation.expect( null ) ).to.throw();
 
     } );
 

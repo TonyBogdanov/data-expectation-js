@@ -33,6 +33,8 @@ import LowerThanOrEqualExpectation from './Expectation/LowerThanOrEqualExpectati
 import AbstractExpectation from './Expectation/AbstractExpectation';
 import RegexMatchExpectation from './Expectation/RegexMatchExpectation';
 import RegexPatternExpectation from './Expectation/RegexPatternExpectation';
+import IndexedArrayExpectation from './Expectation/IndexedArrayExpectation';
+import AssociativeArrayExpectation from './Expectation/AssociativeArrayExpectation';
 
 class Factory {
 
@@ -124,6 +126,8 @@ Factory.map = {
     ScalarExpectation: ScalarExpectation,
     StringLengthExpectation: StringLengthExpectation,
     ArrayExpectation: ArrayExpectation,
+    IndexedArrayExpectation: IndexedArrayExpectation,
+    AssociativeArrayExpectation: AssociativeArrayExpectation,
     ListExpectation: ListExpectation,
     ArrayKeysExpectation: ArrayKeysExpectation,
     EnumExpectation: EnumExpectation,
