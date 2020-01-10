@@ -36,6 +36,7 @@ import RegexPatternExpectation from './Expectation/RegexPatternExpectation';
 import IndexedArrayExpectation from './Expectation/IndexedArrayExpectation';
 import AssociativeArrayExpectation from './Expectation/AssociativeArrayExpectation';
 import CountExpectation from './Expectation/CountExpectation';
+import MapExpectation from './Expectation/MapExpectation';
 
 class Factory {
 
@@ -141,6 +142,7 @@ Factory.map = {
     RegexMatchExpectation: RegexMatchExpectation,
     RegexPatternExpectation: RegexPatternExpectation,
     CountExpectation: CountExpectation,
+    MapExpectation: MapExpectation,
 
 };
 
