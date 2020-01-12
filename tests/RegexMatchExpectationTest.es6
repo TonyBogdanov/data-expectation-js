@@ -44,7 +44,7 @@ describe( 'RegexMatchExpectation.expect()', () => {
         expect( JSON.stringify( Factory.fromDefinition( {
 
             expectationName: RegexMatchExpectation.name,
-            expectationArguments: [ /^\d+$/ ],
+            expectationArguments: [ '/^\\d+$/' ],
 
         } ) ) ).to.equal( JSON.stringify( expectation ) );
 

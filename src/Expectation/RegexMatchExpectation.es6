@@ -16,7 +16,7 @@ export default class RegexMatchExpectation extends AbstractExpectation {
 
         super();
 
-        this.pattern = 'string' === typeof pattern ? regexFromString( pattern ) : pattern;
+        this.pattern = pattern.toString();
 
     }
 
@@ -28,7 +28,8 @@ export default class RegexMatchExpectation extends AbstractExpectation {
 
     expect( data, path = null ) {
 
-        if ( ! data.match( this.pattern ) ) {
+        // RegExp object causes problem when serializing, so we use only store the un-parsed string pattern instead.
+        if ( ! data.match( regexFromString( this.pattern ) ) ) {
 
             throw new UnexpectedDataException( data, this, path );
 
