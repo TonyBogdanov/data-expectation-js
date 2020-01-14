@@ -36,7 +36,7 @@ export default class NotExpectation extends AbstractExpectation {
 
         }
 
-        throw new UnexpectedDataException( data, this, path, e );
+        throw new UnexpectedDataException( data, this, path );
 
     }
 
