@@ -31,6 +31,7 @@ describe( 'IndexedArrayExpectation.expect()', () => {
         let expectation = new IndexedArrayExpectation();
 
         expect( expectation.expect( [] ) ).to.equal( expectation );
+        expect( expectation.expect( {} ) ).to.equal( expectation );
         expect( expectation.expect( [ 'one', 'two', 'three' ] ) ).to.equal( expectation );
         expect( expectation.expect( { 0: 'one', 1: 'two', 2: 'three' } ) ).to.equal( expectation );
         expect( expectation.expect( { 0: 'one', 2: 'two', 1: 'three' } ) ).to.equal( expectation );

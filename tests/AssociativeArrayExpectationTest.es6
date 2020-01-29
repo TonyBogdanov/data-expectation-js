@@ -33,6 +33,7 @@ describe( 'AssociativeArrayExpectation.expect()', () => {
         let expectation = new AssociativeArrayExpectation();
 
         expect( expectation.expect( [] ) ).to.equal( expectation );
+        expect( expectation.expect( {} ) ).to.equal( expectation );
         expect( expectation.expect( { 0: 'one', 2: 'two', 3: 'three' } ) ).to.equal( expectation );
         expect( expectation.expect( { 'one': 'one', 'two': 'two', 'three': 'three' } ) ).to.equal( expectation );
 

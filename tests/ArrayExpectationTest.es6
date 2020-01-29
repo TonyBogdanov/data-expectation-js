@@ -17,6 +17,7 @@ describe( 'ArrayExpectation.expect()', () => {
         let expectation = new ArrayExpectation();
 
         expect( expectation.expect( [] ) ).to.equal( expectation );
+        expect( expectation.expect( {} ) ).to.equal( expectation );
         expect( expectation.expect( [ 'a' ] ) ).to.equal( expectation );
         expect( expectation.expect( { 'a': 'a' } ) ).to.equal( expectation );
 

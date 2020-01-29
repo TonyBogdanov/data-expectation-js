@@ -40,7 +40,14 @@ export default class AssociativeArrayExpectation extends AbstractExpectation {
 
         }
 
-        const keys = Object.keys( data ).sort( ( left, right ) => {
+        const keys = Object.keys( data );
+        if ( 0 === keys.length ) {
+
+            return this;
+
+        }
+
+        const sorted = keys.sort( ( left, right ) => {
 
             left = parseInt( left );
             right = parseInt( right );
@@ -56,8 +63,7 @@ export default class AssociativeArrayExpectation extends AbstractExpectation {
         } );
 
         const range = Array.apply( null, { length: keys.length } ).map( Function.call, Number );
-
-        if ( range.join( ',' ) === keys.join( ',' ) ) {
+        if ( range.join( ',' ) === sorted.join( ',' ) ) {
 
             throw new UnexpectedDataException( data, this, path );
 
