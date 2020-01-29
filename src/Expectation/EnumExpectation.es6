@@ -21,7 +21,8 @@ export default class EnumExpectation extends AbstractExpectation {
 
     getType() {
 
-        return `enum (\n${ this.options.map( option => `${ this.indent( JSON.stringify( option ) ) };\n` ) })`;
+        return `enum (\n${ this.options.map( option =>
+            `${ this.indent( JSON.stringify( option ) ) };` ).join( `\n` ) }\n)`;
 
     }
 

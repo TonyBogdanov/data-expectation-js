@@ -21,7 +21,7 @@ export default class AndExpectation extends AbstractExpectation {
     getType() {
 
         return `and (\n${ this.expectations.map( expectation =>
-            this.indent( `${ expectation.getType() };\n` ) ).join( '' ) })`;
+            this.indent( `${ expectation.getType() };` ) ).join( `\n` ) }\n)`;
 
     }
 
