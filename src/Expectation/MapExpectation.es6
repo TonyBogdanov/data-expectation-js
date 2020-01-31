@@ -22,9 +22,9 @@ export default class MapExpectation extends AbstractExpectation {
 
         return `map {\n${ Object.keys( this.expectations ).map( key => {
             
-            return this.indent( `${ key } = ${ this.expectations[ key ].getType() };\n` )
+            return this.indent( `${ key } = ${ this.expectations[ key ].getType() };` )
             
-        } ).join( '' ) }}`;
+        } ).join( `\n` ) }\n}`;
 
     }
 
