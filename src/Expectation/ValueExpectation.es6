@@ -5,8 +5,8 @@
  * file that was distributed with this source code.
  */
 
-import isFloat from '../Util/isFloat';
-import isFunction from '../Util/isFunction';
+import isFloat from 'data-types-js/src/is/isFloat';
+import isFunction from 'data-types-js/src/is/isFunction';
 
 import AbstractExpectation from './AbstractExpectation';
 import UnexpectedDataException from './Exception/UnexpectedDataException';

@@ -5,7 +5,7 @@
  * file that was distributed with this source code.
  */
 
-import isScalar from '../Util/isScalar';
+import isScalar from 'data-types-js/src/is/isScalar';
 
 import AbstractExpectation from './AbstractExpectation';
 import UnexpectedDataException from './Exception/UnexpectedDataException';

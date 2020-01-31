@@ -5,7 +5,7 @@
  * file that was distributed with this source code.
  */
 
-import isEmpty from '../Util/isEmpty';
+import isEmpty from 'data-types-js/src/is/isEmpty';
 
 import AbstractExpectation from './AbstractExpectation';
 import UnexpectedDataException from './Exception/UnexpectedDataException';

@@ -5,7 +5,7 @@
  * file that was distributed with this source code.
  */
 
-import isObject from '../../Util/isObject';
+import isObject from 'data-types-js/src/is/isObject';
 
 export default class InvalidExpectationDefinitionException {
 

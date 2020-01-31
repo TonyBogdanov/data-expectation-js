@@ -1,13 +1,13 @@
 {
   "name": "data-expectation",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "ECMAScript implementation of TonyBogdanov/data-expectation",
   "main": "index.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha --require @babel/register 'tests/**/*.es6'"
+    "test": "./node_modules/mocha/bin/mocha --require ./babel-register.js 'tests/**/*.es6'"
   },
   "repository": {
     "type": "git",
@@ -20,12 +20,18 @@
   },
   "homepage": "https://github.com/TonyBogdanov/data-expectation-js#readme",
   "devDependencies": {
-    "@babel/cli": "^7.7.7",
-    "@babel/core": "^7.7.7",
-    "@babel/node": "^7.7.7",
-    "@babel/preset-env": "^7.7.7",
-    "@babel/register": "^7.7.7",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/register": "^7.8.3",
+    "@babel/runtime": "^7.8.4",
     "chai": "^4.2.0",
     "mocha": "^6.2.2"
+  },
+  "dependencies": {
+    "data-types-js": "^1.0.2"
   }
 }

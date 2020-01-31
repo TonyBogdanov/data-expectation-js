@@ -7,7 +7,7 @@
 
 import AbstractExpectation from './AbstractExpectation';
 import UnexpectedDataException from './Exception/UnexpectedDataException';
-import isInteger from '../Util/isInteger';
+import isInteger from 'data-types-js/src/is/isInteger';
 
 export default class IntegerExpectation extends AbstractExpectation {
 
