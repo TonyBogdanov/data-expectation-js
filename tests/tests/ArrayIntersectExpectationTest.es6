@@ -7,9 +7,9 @@
 
 import { expect } from 'chai';
 
-import Factory from '../src/Factory';
-import ValueExpectation from '../src/Expectation/ValueExpectation';
-import ArrayIntersectExpectation from '../src/Expectation/ArrayIntersectExpectation';
+import Factory from '../../src/Factory';
+import ValueExpectation from '../../src/Expectation/ValueExpectation';
+import ArrayIntersectExpectation from '../../src/Expectation/ArrayIntersectExpectation';
 
 describe( 'ArrayIntersectExpectation.expect()', () => {
 

@@ -7,13 +7,13 @@
 
 import { expect } from 'chai';
 
-import Factory from '../src/Factory';
-import StringExpectation from '../src/Expectation/StringExpectation';
-import ListExpectation from '../src/Expectation/ListExpectation';
-import IntegerExpectation from '../src/Expectation/IntegerExpectation';
-import ArrayKeysExpectation from '../src/Expectation/ArrayKeysExpectation';
-import EnumExpectation from '../src/Expectation/EnumExpectation';
-import ValueExpectation from '../src/Expectation/ValueExpectation';
+import Factory from '../../src/Factory';
+import StringExpectation from '../../src/Expectation/StringExpectation';
+import ListExpectation from '../../src/Expectation/ListExpectation';
+import IntegerExpectation from '../../src/Expectation/IntegerExpectation';
+import ArrayKeysExpectation from '../../src/Expectation/ArrayKeysExpectation';
+import EnumExpectation from '../../src/Expectation/EnumExpectation';
+import ValueExpectation from '../../src/Expectation/ValueExpectation';
 
 describe( 'ArrayKeysExpectation.expect()', () => {
 

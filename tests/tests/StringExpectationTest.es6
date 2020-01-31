@@ -7,8 +7,8 @@
 
 import { expect } from "chai";
 
-import Factory from '../src/Factory';
-import StringExpectation from '../src/Expectation/StringExpectation';
+import Factory from '../../src/Factory';
+import StringExpectation from '../../src/Expectation/StringExpectation';
 
 describe( 'StringExpectation.expect()', () => {
 

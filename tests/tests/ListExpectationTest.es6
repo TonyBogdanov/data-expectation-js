@@ -7,10 +7,10 @@
 
 import { expect } from 'chai';
 
-import Factory from '../src/Factory';
-import StringExpectation from '../src/Expectation/StringExpectation';
-import ListExpectation from '../src/Expectation/ListExpectation';
-import IntegerExpectation from '../src/Expectation/IntegerExpectation';
+import Factory from '../../src/Factory';
+import StringExpectation from '../../src/Expectation/StringExpectation';
+import ListExpectation from '../../src/Expectation/ListExpectation';
+import IntegerExpectation from '../../src/Expectation/IntegerExpectation';
 
 describe( 'ListExpectation.expect()', () => {
 

@@ -7,8 +7,8 @@
 
 import { expect } from 'chai';
 
-import Factory from '../src/Factory';
-import EnumExpectation from '../src/Expectation/EnumExpectation';
+import Factory from '../../src/Factory';
+import EnumExpectation from '../../src/Expectation/EnumExpectation';
 
 describe( 'EnumExpectation.expect()', () => {
 

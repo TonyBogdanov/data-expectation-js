@@ -7,18 +7,18 @@
 
 import { expect } from "chai";
 
-import Factory from '../src/Factory';
-import StringLengthExpectation from '../src/Expectation/StringLengthExpectation';
-import ValueExpectation from '../src/Expectation/ValueExpectation';
+import Factory from '../../src/Factory';
+import CountExpectation from '../../src/Expectation/CountExpectation';
+import ValueExpectation from '../../src/Expectation/ValueExpectation';
 
-describe( 'StringLengthExpectation.expect()', () => {
+describe( 'CountExpectation.expect()', () => {
 
     function invalidProvider() {
 
         return [
 
-            [ 'hello', 4 ],
-            [ '', 1 ],
+            [ [ 'a', 'b', 'c' ], 4 ],
+            [ [], 1 ],
 
         ];
 
@@ -26,11 +26,11 @@ describe( 'StringLengthExpectation.expect()', () => {
 
     it( 'testValid', () => {
 
-        let expectation = new StringLengthExpectation( new ValueExpectation( 0 ) );
-        expect( expectation.expect( '' ) ).to.equal( expectation );
+        let expectation = new CountExpectation( new ValueExpectation( 0 ) );
+        expect( expectation.expect( [] ) ).to.equal( expectation );
 
-        expectation = new StringLengthExpectation( new ValueExpectation( 5 ) );
-        expect( expectation.expect( 'hello' ) ).to.equal( expectation );
+        expectation = new CountExpectation( new ValueExpectation( 3 ) );
+        expect( expectation.expect( [ 'a', 'b', 'c' ] ) ).to.equal( expectation );
 
     } );
 
@@ -38,7 +38,7 @@ describe( 'StringLengthExpectation.expect()', () => {
 
         invalidProvider().forEach( ( value, length ) => {
 
-            let expectation = new StringLengthExpectation( new ValueExpectation( length ) );
+            let expectation = new CountExpectation( new ValueExpectation( length ) );
             expect( () => expectation.expect( value ) ).to.throw();
 
         } );
@@ -47,10 +47,10 @@ describe( 'StringLengthExpectation.expect()', () => {
 
     it( 'testFromDefinition', () => {
 
-        let expectation = new StringLengthExpectation( new ValueExpectation( 0 ) );
+        let expectation = new CountExpectation( new ValueExpectation( 0 ) );
         expect( JSON.stringify( Factory.fromDefinition( {
 
-            expectationName: StringLengthExpectation.name,
+            expectationName: CountExpectation.name,
             expectationArguments: [ {
 
                 expectationName: ValueExpectation.name,

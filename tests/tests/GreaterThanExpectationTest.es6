@@ -7,15 +7,16 @@
 
 import { expect } from 'chai';
 
-import Factory from '../src/Factory';
-import GreaterThanOrEqualExpectation from '../src/Expectation/GreaterThanOrEqualExpectation';
+import Factory from '../../src/Factory';
+import GreaterThanExpectation from '../../src/Expectation/GreaterThanExpectation';
 
-describe( 'GreaterThanOrEqualExpectation.expect()', () => {
+describe( 'GreaterThanExpectation.expect()', () => {
 
     function invalidProvider() {
 
         return [
 
+            123,
             122,
             0,
             -123,
@@ -28,12 +29,12 @@ describe( 'GreaterThanOrEqualExpectation.expect()', () => {
 
     it( 'testValid', () => {
 
-        let expectation = new GreaterThanOrEqualExpectation( 123 );
+        let expectation = new GreaterThanExpectation( 123 );
 
         expect( expectation.expect( 124 ) ).to.equal( expectation );
         expect( expectation.expect( 999 ) ).to.equal( expectation );
 
-        expectation = new GreaterThanOrEqualExpectation( 123.45 );
+        expectation = new GreaterThanExpectation( 123.45 );
 
         expect( expectation.expect( 123.46 ) ).to.equal( expectation );
         expect( expectation.expect( 999.99 ) ).to.equal( expectation );
@@ -44,7 +45,7 @@ describe( 'GreaterThanOrEqualExpectation.expect()', () => {
 
         invalidProvider().forEach( value => {
 
-            let expectation = new GreaterThanOrEqualExpectation( 123 );
+            let expectation = new GreaterThanExpectation( 123 );
             expect( () => expectation.expect( value ) ).to.throw();
 
         } );
@@ -53,11 +54,11 @@ describe( 'GreaterThanOrEqualExpectation.expect()', () => {
 
     it( 'testFromDefinition', () => {
 
-        let expectation = new GreaterThanOrEqualExpectation( 123 );
+        let expectation = new GreaterThanExpectation( 123 );
 
         expect( JSON.stringify( Factory.fromDefinition( {
 
-            expectationName: GreaterThanOrEqualExpectation.name,
+            expectationName: GreaterThanExpectation.name,
             expectationArguments: [ 123 ],
 
         } ) ) ).to.equal( JSON.stringify( expectation ) );

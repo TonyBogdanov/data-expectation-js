@@ -7,14 +7,14 @@
 
 import { expect } from "chai";
 
-import Factory from '../src/Factory';
-import StringExpectation from '../src/Expectation/StringExpectation';
-import IntegerExpectation from '../src/Expectation/IntegerExpectation';
-import ArrayExpectation from '../src/Expectation/ArrayExpectation';
-import ListExpectation from '../src/Expectation/ListExpectation';
-import BooleanExpectation from '../src/Expectation/BooleanExpectation';
-import AndExpectation from '../src/Expectation/AndExpectation';
-import MapExpectation from '../src/Expectation/MapExpectation';
+import Factory from '../../src/Factory';
+import StringExpectation from '../../src/Expectation/StringExpectation';
+import IntegerExpectation from '../../src/Expectation/IntegerExpectation';
+import ArrayExpectation from '../../src/Expectation/ArrayExpectation';
+import ListExpectation from '../../src/Expectation/ListExpectation';
+import BooleanExpectation from '../../src/Expectation/BooleanExpectation';
+import AndExpectation from '../../src/Expectation/AndExpectation';
+import MapExpectation from '../../src/Expectation/MapExpectation';
 
 describe( 'MapExpectation.expect()', () => {
 

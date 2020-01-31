@@ -7,8 +7,8 @@
 
 import { expect } from "chai";
 
-import Factory from '../src/Factory';
-import RegexPatternExpectation from '../src/Expectation/RegexPatternExpectation';
+import Factory from '../../src/Factory';
+import RegexPatternExpectation from '../../src/Expectation/RegexPatternExpectation';
 
 describe( 'RegexPatternExpectation.expect()', () => {
 

@@ -7,8 +7,8 @@
 
 import { expect } from 'chai';
 
-import Factory from '../src/Factory';
-import BooleanExpectation from '../src/Expectation/BooleanExpectation';
+import Factory from '../../src/Factory';
+import BooleanExpectation from '../../src/Expectation/BooleanExpectation';
 
 describe( 'BooleanExpectation.expect()', () => {
 

@@ -7,11 +7,11 @@
 
 import { expect } from 'chai';
 
-import Factory from '../src/Factory';
-import AndExpectation from '../src/Expectation/AndExpectation';
-import NotExpectation from '../src/Expectation/NotExpectation';
-import EmptyExpectation from '../src/Expectation/EmptyExpectation';
-import StringExpectation from '../src/Expectation/StringExpectation';
+import Factory from '../../src/Factory';
+import AndExpectation from '../../src/Expectation/AndExpectation';
+import NotExpectation from '../../src/Expectation/NotExpectation';
+import EmptyExpectation from '../../src/Expectation/EmptyExpectation';
+import StringExpectation from '../../src/Expectation/StringExpectation';
 
 describe( 'AndExpectation.expect()', () => {
 

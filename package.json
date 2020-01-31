@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha --require ./babel-register.js 'tests/**/*.es6'"
+    "test": "./node_modules/mocha/bin/mocha --require ./babel-register.js 'tests/tests/**/*.es6'"
   },
   "repository": {
     "type": "git",

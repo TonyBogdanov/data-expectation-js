@@ -7,8 +7,8 @@
 
 import { expect } from 'chai';
 
-import Factory from '../src/Factory';
-import AssociativeArrayExpectation from '../src/Expectation/AssociativeArrayExpectation';
+import Factory from '../../src/Factory';
+import AssociativeArrayExpectation from '../../src/Expectation/AssociativeArrayExpectation';
 
 describe( 'AssociativeArrayExpectation.expect()', () => {
 

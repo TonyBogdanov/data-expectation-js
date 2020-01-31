@@ -7,9 +7,9 @@
 
 import { expect } from 'chai';
 
-import Factory from '../src/Factory';
-import ArrayDiffExpectation from '../src/Expectation/ArrayDiffExpectation';
-import ValueExpectation from '../src/Expectation/ValueExpectation';
+import Factory from '../../src/Factory';
+import ArrayDiffExpectation from '../../src/Expectation/ArrayDiffExpectation';
+import ValueExpectation from '../../src/Expectation/ValueExpectation';
 
 describe( 'ArrayDiffExpectation.expect()', () => {
 

@@ -7,18 +7,16 @@
 
 import { expect } from 'chai';
 
-import Factory from '../src/Factory';
-import LowerThanExpectation from '../src/Expectation/LowerThanExpectation';
+import Factory from '../../src/Factory';
+import LowerThanOrEqualExpectation from '../../src/Expectation/LowerThanOrEqualExpectation';
 
-describe( 'LowerThanExpectation.expect()', () => {
+describe( 'LowerThanOrEqualExpectation.expect()', () => {
 
     function invalidProvider() {
 
         return [
 
-            123,
             124,
-            123.45,
             123.46,
 
         ];
@@ -27,14 +25,16 @@ describe( 'LowerThanExpectation.expect()', () => {
 
     it( 'testValid', () => {
 
-        let expectation = new LowerThanExpectation( 123 );
+        let expectation = new LowerThanOrEqualExpectation( 123 );
 
+        expect( expectation.expect( 123 ) ).to.equal( expectation );
         expect( expectation.expect( 121 ) ).to.equal( expectation );
         expect( expectation.expect( 0 ) ).to.equal( expectation );
         expect( expectation.expect( -123 ) ).to.equal( expectation );
 
-        expectation = new LowerThanExpectation( 123.45 );
+        expectation = new LowerThanOrEqualExpectation( 123.45 );
 
+        expect( expectation.expect( 123.45 ) ).to.equal( expectation );
         expect( expectation.expect( 123.44 ) ).to.equal( expectation );
         expect( expectation.expect( 0 ) ).to.equal( expectation );
         expect( expectation.expect( -123.45 ) ).to.equal( expectation );
@@ -45,7 +45,7 @@ describe( 'LowerThanExpectation.expect()', () => {
 
         invalidProvider().forEach( value => {
 
-            let expectation = new LowerThanExpectation( 123 );
+            let expectation = new LowerThanOrEqualExpectation( 123 );
             expect( () => expectation.expect( value ) ).to.throw();
 
         } );
@@ -54,11 +54,11 @@ describe( 'LowerThanExpectation.expect()', () => {
 
     it( 'testFromDefinition', () => {
 
-        let expectation = new LowerThanExpectation( 123 );
+        let expectation = new LowerThanOrEqualExpectation( 123 );
 
         expect( JSON.stringify( Factory.fromDefinition( {
 
-            expectationName: LowerThanExpectation.name,
+            expectationName: LowerThanOrEqualExpectation.name,
             expectationArguments: [ 123 ],
 
         } ) ) ).to.equal( JSON.stringify( expectation ) );

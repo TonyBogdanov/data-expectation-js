@@ -7,9 +7,9 @@
 
 import { expect } from "chai";
 
-import Factory from '../src/Factory';
-import IntegerExpectation from '../src/Expectation/IntegerExpectation';
-import NotExpectation from '../src/Expectation/NotExpectation';
+import Factory from '../../src/Factory';
+import IntegerExpectation from '../../src/Expectation/IntegerExpectation';
+import NotExpectation from '../../src/Expectation/NotExpectation';
 
 describe( 'NotExpectation.expect()', () => {
 
