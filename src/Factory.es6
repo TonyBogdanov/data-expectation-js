@@ -38,6 +38,8 @@ import AssociativeArrayExpectation from './Expectation/AssociativeArrayExpectati
 import CountExpectation from './Expectation/CountExpectation';
 import MapExpectation from './Expectation/MapExpectation';
 import ClassExpectation from './Expectation/ClassExpectation';
+import AnythingExpectation from './Expectation/AnythingExpectation';
+import FunctionExpectation from './Expectation/FunctionExpectation';
 
 class Factory {
 
@@ -145,6 +147,8 @@ Factory.map = {
     CountExpectation: CountExpectation,
     MapExpectation: MapExpectation,
     ClassExpectation: ClassExpectation,
+    AnythingExpectation: AnythingExpectation,
+    FunctionExpectation: FunctionExpectation,
 
 };
 
