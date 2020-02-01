@@ -5,10 +5,9 @@
  * file that was distributed with this source code.
  */
 
-import regexFromString from '../Util/regexFromString';
-
 import AbstractExpectation from './AbstractExpectation';
 import UnexpectedDataException from './Exception/UnexpectedDataException';
+import RegexFromString from '../Util/RegexFromString';
 
 export default class RegexPatternExpectation extends AbstractExpectation {
 
@@ -22,7 +21,7 @@ export default class RegexPatternExpectation extends AbstractExpectation {
 
         try {
 
-            regexFromString( data );
+            RegexFromString.create( data );
 
         } catch ( e ) {
 

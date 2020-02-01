@@ -7,6 +7,7 @@
 
 import AbstractExpectation from './AbstractExpectation';
 import UnexpectedDataException from './Exception/UnexpectedDataException';
+import CircularDependency from '../Util/CircularDependency';
 
 export default class MapExpectation extends AbstractExpectation {
 
@@ -20,11 +21,11 @@ export default class MapExpectation extends AbstractExpectation {
 
     getType() {
 
-        return `map {\n${ Object.keys( this.expectations ).map( key => {
+        return CircularDependency.detect( this, () => `map {\n${ Object.keys( this.expectations ).map( key => {
             
             return this.indent( `${ key } = ${ this.expectations[ key ].getType() };` )
             
-        } ).join( `\n` ) }\n}`;
+        } ).join( `\n` ) }\n}`, '<circular>' );
 
     }
 

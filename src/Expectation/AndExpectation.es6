@@ -7,6 +7,7 @@
 
 import AbstractExpectation from './AbstractExpectation';
 import UnexpectedDataException from './Exception/UnexpectedDataException';
+import CircularDependency from '../Util/CircularDependency';
 
 export default class AndExpectation extends AbstractExpectation {
 
@@ -20,8 +21,8 @@ export default class AndExpectation extends AbstractExpectation {
 
     getType() {
 
-        return `and (\n${ this.expectations.map( expectation =>
-            this.indent( `${ expectation.getType() };` ) ).join( `\n` ) }\n)`;
+        return CircularDependency.detect( this, () => `and (\n${ this.expectations.map( expectation =>
+            this.indent( `${ expectation.getType() };` ) ).join( `\n` ) }\n)`, '<circular>' );
 
     }
 

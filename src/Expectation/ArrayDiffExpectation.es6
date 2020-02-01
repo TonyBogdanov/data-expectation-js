@@ -5,10 +5,10 @@
  * file that was distributed with this source code.
  */
 
-import arrayDiff from '../Util/arrayDiff';
-
 import AbstractExpectation from './AbstractExpectation';
 import UnexpectedDataException from './Exception/UnexpectedDataException';
+import ArrayDiff from '../Util/ArrayDiff';
+import CircularDependency from '../Util/CircularDependency';
 
 export default class ArrayDiffExpectation extends AbstractExpectation {
 
@@ -23,8 +23,9 @@ export default class ArrayDiffExpectation extends AbstractExpectation {
 
     getType() {
 
-        return `arrayDiff (\n${ this.indent( JSON.stringify( this.compare ) ) };\n${
-            this.indent( this.expectation.getType() ) };\n)`;
+        return CircularDependency.detect( this, () => `arrayDiff (\n${
+            this.indent( JSON.stringify( this.compare ) ) };\n${ this.indent( this.expectation.getType() ) };\n)`,
+            '<circular>' );
 
     }
 
@@ -32,7 +33,7 @@ export default class ArrayDiffExpectation extends AbstractExpectation {
 
         try {
 
-            this.expectation.expect( arrayDiff( data, this.compare ), path );
+            this.expectation.expect( ArrayDiff.diff( data, this.compare ), path );
 
         } catch ( e ) {
 

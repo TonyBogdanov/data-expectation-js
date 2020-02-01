@@ -7,6 +7,7 @@
 
 import AbstractExpectation from './AbstractExpectation';
 import UnexpectedDataException from './Exception/UnexpectedDataException';
+import CircularDependency from '../Util/CircularDependency';
 
 export default class StringLengthExpectation extends AbstractExpectation {
 
@@ -20,7 +21,8 @@ export default class StringLengthExpectation extends AbstractExpectation {
 
     getType() {
 
-        return `stringLength (\n${ this.indent( this.expectation.getType() ) }\n)`;
+        return CircularDependency.detect( this, () => `stringLength (\n${
+            this.indent( this.expectation.getType() ) }\n)`, '<circular>' );
 
     }
 

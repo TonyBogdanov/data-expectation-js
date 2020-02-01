@@ -5,9 +5,10 @@
  * file that was distributed with this source code.
  */
 
-import arrayKeys from '../Util/arrayKeys';
 import AbstractExpectation from './AbstractExpectation';
 import UnexpectedDataException from './Exception/UnexpectedDataException';
+import ArrayKeys from '../Util/ArrayKeys';
+import CircularDependency from '../Util/CircularDependency';
 
 export default class ArrayKeysExpectation extends AbstractExpectation {
 
@@ -22,7 +23,7 @@ export default class ArrayKeysExpectation extends AbstractExpectation {
 
     getType() {
 
-        return `arrayKeys ( ${ this.expectation.getType() } )`;
+        return CircularDependency.detect( this, () => `arrayKeys ( ${ this.expectation.getType() } )`, '<circular>' );
 
     }
 
@@ -30,7 +31,7 @@ export default class ArrayKeysExpectation extends AbstractExpectation {
 
         try {
 
-            let keys = arrayKeys( data );
+            let keys = ArrayKeys.keys( data );
             if ( this.sort ) {
 
                 keys = keys.sort();

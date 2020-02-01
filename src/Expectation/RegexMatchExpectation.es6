@@ -5,10 +5,9 @@
  * file that was distributed with this source code.
  */
 
-import regexFromString from '../Util/regexFromString';
-
 import AbstractExpectation from './AbstractExpectation';
 import UnexpectedDataException from './Exception/UnexpectedDataException';
+import RegexFromString from '../Util/RegexFromString';
 
 export default class RegexMatchExpectation extends AbstractExpectation {
 
@@ -29,7 +28,7 @@ export default class RegexMatchExpectation extends AbstractExpectation {
     expect( data, path = null ) {
 
         // RegExp object causes problem when serializing, so we use only store the un-parsed string pattern instead.
-        if ( ! data.match( regexFromString( this.pattern ) ) ) {
+        if ( ! data.match( RegexFromString.create( this.pattern ) ) ) {
 
             throw new UnexpectedDataException( data, this, path );
 

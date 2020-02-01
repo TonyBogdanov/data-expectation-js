@@ -5,10 +5,10 @@
  * file that was distributed with this source code.
  */
 
-import arrayIntersect from '../Util/arrayIntersect';
-
 import AbstractExpectation from './AbstractExpectation';
 import UnexpectedDataException from './Exception/UnexpectedDataException';
+import ArrayIntersect from '../Util/ArrayIntersect';
+import CircularDependency from '../Util/CircularDependency';
 
 export default class ArrayIntersectExpectation extends AbstractExpectation {
 
@@ -23,8 +23,9 @@ export default class ArrayIntersectExpectation extends AbstractExpectation {
 
     getType() {
 
-        return `arrayIntersect (\n${ this.indent( JSON.stringify( this.compare ) ) };\n${
-            this.indent( this.expectation.getType() ) };\n)`;
+        return CircularDependency.detect( this, () => `arrayIntersect (\n${
+            this.indent( JSON.stringify( this.compare ) ) };\n${ this.indent( this.expectation.getType() ) };\n)`,
+            '<circular>' );
 
     }
 
@@ -32,7 +33,7 @@ export default class ArrayIntersectExpectation extends AbstractExpectation {
 
         try {
 
-            this.expectation.expect( arrayIntersect( data, this.compare ), path );
+            this.expectation.expect( ArrayIntersect.intersect( data, this.compare ), path );
 
         } catch ( e ) {
 

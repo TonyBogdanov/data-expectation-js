@@ -7,6 +7,7 @@
 
 import AbstractExpectation from './AbstractExpectation';
 import UnexpectedDataException from './Exception/UnexpectedDataException';
+import CircularDependency from '../Util/CircularDependency';
 
 export default class NotExpectation extends AbstractExpectation {
 
@@ -20,7 +21,7 @@ export default class NotExpectation extends AbstractExpectation {
 
     getType() {
 
-        return `not ( ${ this.expectation.getType() } )`;
+        return CircularDependency.detect( this, () => `not ( ${ this.expectation.getType() } )`, '<circular>' );
 
     }
 

@@ -7,6 +7,7 @@
 
 import AbstractExpectation from './AbstractExpectation';
 import UnexpectedDataException from './Exception/UnexpectedDataException';
+import CircularDependency from '../Util/CircularDependency';
 
 export default class ListExpectation extends AbstractExpectation {
 
@@ -20,7 +21,7 @@ export default class ListExpectation extends AbstractExpectation {
 
     getType() {
 
-        return `list ( ${ this.expectation.getType() } )`;
+        return CircularDependency.detect( this, () => `list ( ${ this.expectation.getType() } )`, '<circular>' );
 
     }
 
