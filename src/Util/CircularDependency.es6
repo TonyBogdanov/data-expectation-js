@@ -5,9 +5,7 @@
  * file that was distributed with this source code.
  */
 
-export default class CircularDependency {
-
-    static stack = [];
+class CircularDependency {
 
     static detect( reference, callback, fallback ) {
 
@@ -26,3 +24,7 @@ export default class CircularDependency {
     }
 
 }
+
+CircularDependency.stack = [];
+
+export default CircularDependency;
