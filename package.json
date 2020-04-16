@@ -1,6 +1,6 @@
 {
   "name": "data-expectation",
-  "version": "1.0.26",
+  "version": "1.0.27",
   "description": "ECMAScript implementation of TonyBogdanov/data-expectation",
   "main": "index.js",
   "directories": {
@@ -22,16 +22,16 @@
   "sideEffects": false,
   "devDependencies": {
     "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.8.4",
-    "@babel/node": "^7.8.4",
-    "@babel/plugin-transform-runtime": "^7.8.3",
-    "@babel/preset-env": "^7.8.4",
-    "@babel/register": "^7.8.3",
-    "@babel/runtime": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/register": "^7.9.0",
+    "@babel/runtime": "^7.9.2",
     "chai": "^4.2.0",
-    "mocha": "^6.2.2"
+    "mocha": "^6.2.3"
   },
   "dependencies": {
-    "data-types-js": "^1.0.3"
+    "data-types-js": "^1.0.5"
   }
 }
