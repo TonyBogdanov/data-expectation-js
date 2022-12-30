@@ -29,7 +29,7 @@
     "@babel/register": "^7.9.0",
     "@babel/runtime": "^7.9.2",
     "chai": "^4.2.0",
-    "mocha": "^6.2.3"
+    "mocha": "^10.2.0"
   },
   "dependencies": {
     "data-types-js": "^1.0.5"
